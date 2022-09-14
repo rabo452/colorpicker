@@ -1,0 +1,44 @@
+<InterfaceObserver>:
+    _canvasWidget: canvasWidget
+    _rgbLabel: rgbLabel
+    _hexLabel: hexLabel
+
+    BoxLayout:
+        orientation: 'vertical'
+
+        Label:
+            text: "move to area where you want to know the color and click right button"
+            align: "center"
+
+        AnchorLayout:
+            anchor_x: 'center'
+
+            BoxLayout:
+                id: canvasWidget
+                size_hint: .8, 1
+
+        BoxLayout:
+            orientation: 'horizontal'
+
+            # rgb
+            BoxLayout:
+                orientation: 'vertical'
+                padding: 20
+
+                Label:
+                    id: rgbLabel
+                    text: 'color as rgb: (0, 0, 0)'
+                Button:
+                    text: 'copy rgb value'
+                    on_press: root.rgbBtnOnClick(self)
+
+            BoxLayout:
+                orientation: 'vertical'
+                padding: 20
+
+                Label:
+                    id: hexLabel
+                    text: 'color as hex #000000'
+                Button:
+                    text: 'copy hex value'
+                    on_press: root.hexBtnOnClick(self)
